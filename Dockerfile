@@ -5,6 +5,8 @@
 # Base this on a well tested jdk build that should work with the paper jar
 FROM azul/zulu-openjdk-alpine:17
 
+MAINTAINER Stephen Farnsworth <ilektron@ilektronx.com>
+
 # We need curl to download the correct version of paper
 RUN apk add --no-cache curl bash shadow su-exec
 
