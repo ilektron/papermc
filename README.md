@@ -2,6 +2,8 @@
 
 A simple Paper Minecraft Server Docker image that allows you to run 1.18+ Paper servers.
 
+To get the latest Paper build, see [Building an Image](#building-an-image)
+
 WARNING: Paper 1.18 is currently experimental and there is no ETA for when a stable version will be released. Backup your data before using this image.
 
 ## Requirements
@@ -19,6 +21,8 @@ On a machine with docker installed, run the following command
 ```
 $ docker build -t papermc:latest .
 ```
+
+Building the image will automatically pull the latest Paper build for the experimental 1.18 branch
 
 ### Running the Server
 
@@ -59,6 +63,8 @@ $ id <dockeruser>
   uid=1001(dockeruser) gid=1001(dockergroup) groups=1001(dockergroup)
 
 ```
+
+If you are using previously created data, you might need to change the ownership of the data on your host system using `chown` and `chmod` for posix based systems.
 
 #### Port
 
