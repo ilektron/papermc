@@ -8,7 +8,6 @@ FROM azul/zulu-openjdk-alpine:17
 # We need curl to download the correct version of paper
 RUN apk add --no-cache curl bash shadow su-exec
 
-
 ARG paper_version=1.18
 
 # Copy over the script
@@ -19,10 +18,6 @@ RUN /getpaperserver.sh ${paper_version}
 
 # Cleanup
 RUN rm /getpaperserver.sh
-
-# Generate the correct minecraft runtime
-# Maybe don't do this yet...
-# RUN java -Dpaperclip.patchonly=true -jar /opt/minecraft/paperclip.jar; exit 0
 
 # Volumes for the external data (Server, World, Config...)
 # This is where all generated data will be stored. Bind a local volume to this location to expose the information to this docker container
@@ -44,13 +39,13 @@ ENV JAVAFLAGS=$java_flags
 
 WORKDIR /data
 
+# It doesn't really matter which UID or GID we use because the entrypoint script will change the server to run as the ids set by the PGID and PUID environment variables
 RUN addgroup -g 9001 papermc
 RUN adduser -s /bin/sh -u 9001 -G papermc -D papermc
 
+# Copy our script that launches minecraft over to our server
 COPY /entrypoint.sh /opt/minecraft
 RUN chmod +x /opt/minecraft/entrypoint.sh
 
 ENTRYPOINT ["/opt/minecraft/entrypoint.sh"]
-
-# CMD /usr/bin/java -jar -Xms$MEMORYSIZE -Xmx$MEMORYSIZE $JAVAFLAGS /opt/minecraft/paperclip.jar --nojline nogui
 
