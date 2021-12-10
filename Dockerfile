@@ -8,9 +8,9 @@ FROM azul/zulu-openjdk-alpine:17
 MAINTAINER Stephen Farnsworth <ilektron@ilektronx.com>
 
 # We need curl to download the correct version of paper
-RUN apk add --no-cache curl bash shadow su-exec
+RUN apk add --no-cache curl bash shadow su-exec jq
 
-ARG paper_version=1.18
+ARG paper_version=1.18.1
 
 # Copy over the script
 WORKDIR /opt/minecraft
