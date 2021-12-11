@@ -38,7 +38,7 @@ docker run -it \
   -p 25565:25565 \
   -m 8g \
   -e MEMORYSIZE=7G \
-  -i ilektron:papermc:1.18 \
+  -i ilektron/papermc:1.18 \
   --name minecraft-server
 ```
 
@@ -76,4 +76,4 @@ In addition to supplying docker with an amount of memory to use, you can use the
 
 ## Dockerio
 
-You can find built images of this docker image under in the docker hub repository [ilektron/paperio](https://hub.docker.com/r/ilektron/papermc)
+You can find built images of this docker image under in the docker hub repository [ilektron/papermc](https://hub.docker.com/r/ilektron/papermc)
