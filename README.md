@@ -4,7 +4,7 @@ A simple Paper Minecraft Server Docker image that allows you to run 1.18+ Paper 
 
 To get the latest Paper build, see [Building an Image](#building-an-image)
 
-WARNING: Paper 1.18 is currently experimental and there is no ETA for when a stable version will be released. Backup your data before using this image.
+WARNING: Paper 1.18 is currently early access and there is no ETA for when a stable version will be released. Backup your data before using this image. As of 2021-12-11 and build #68 of Paper, the server seems to be more stable but backups are still recommended.
 
 ## Requirements
 
