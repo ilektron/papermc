@@ -3,7 +3,7 @@
 # Builds a simple 1.18 or above of a Paper Minecraft Server
 
 # Base this on a well tested jdk build that should work with the paper jar
-FROM azul/zulu-openjdk-alpine:20
+FROM --platform=linux/amd64 azul/zulu-openjdk-alpine:20
 
 MAINTAINER Stephen Farnsworth <ilektron@ilektronx.com>
 
