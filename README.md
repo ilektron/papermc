@@ -4,8 +4,6 @@ A simple Paper Minecraft Server Docker image that allows you to run 1.18+ Paper 
 
 To get the latest Paper build, see [Building an Image](#building-an-image)
 
-WARNING: Paper 1.18 is currently early access and there is no ETA for when a stable version will be released. Backup your data before using this image. As of 2021-12-11 and build #68 of Paper, the server seems to be more stable but backups are still recommended.
-
 ## Requirements
 
 As of version 1.18, Minecraft requires the use of Java 17. The openjdk-alpine:17 docker image doesn't contain the Java 17 release version, instead it contains an Early Access version that is not fully compatible with Paper Minecraft. Newer versions of Java, including 17, have improved memory security. You will need a newer version of docker running on your host to run Java 17 in an image. This image has been tested with Docker 20.10.11.

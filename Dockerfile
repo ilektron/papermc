@@ -3,14 +3,14 @@
 # Builds a simple 1.18 or above of a Paper Minecraft Server
 
 # Base this on a well tested jdk build that should work with the paper jar
-FROM azul/zulu-openjdk-alpine:17
+FROM azul/zulu-openjdk-alpine:20
 
 MAINTAINER Stephen Farnsworth <ilektron@ilektronx.com>
 
 # We need curl to download the correct version of paper
 RUN apk add --no-cache curl bash shadow su-exec jq
 
-ARG paper_version=1.18.1
+ARG paper_version=1.20.1
 
 # Copy over the script
 WORKDIR /opt/minecraft
